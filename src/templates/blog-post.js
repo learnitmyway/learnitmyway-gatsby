@@ -15,15 +15,11 @@ class BlogPostTemplate extends React.Component {
     return (
       <div className='page'>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            display: 'block'
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
         <article className='article'>
+          <time className='article__date'>
+            {post.frontmatter.date}
+          </time>
+          <h1 className='article__title--large'>{post.frontmatter.title}</h1>
           <section className='article__content nested-links'>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
             <hr />
