@@ -449,7 +449,7 @@ html {
   transition: all 0.15s ease-in;
 }
 
-.body-wrapper {
+body {
   background-color: #f4f4f4;
   color: rgba(0, 0, 0, .8);
   line-height: 1.5;
