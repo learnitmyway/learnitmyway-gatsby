@@ -14,7 +14,6 @@
     "gatsby-plugin-offline": "^1.0.18",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sharp": "^1.6.42",
-    "gatsby-plugin-typography": "^1.7.18",
     "gatsby-remark-copy-linked-files": "^1.5.31",
     "gatsby-remark-images": "^1.5.61",
     "gatsby-remark-prismjs": "^1.2.24",
@@ -25,8 +24,7 @@
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.5",
     "typeface-merriweather": "0.0.43",
-    "typeface-montserrat": "0.0.43",
-    "typography-theme-wordpress-2016": "^0.15.10"
+    "typeface-montserrat": "0.0.43"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
