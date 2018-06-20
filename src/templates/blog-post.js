@@ -7,13 +7,13 @@ import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
-  render() {
+  render () {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
 
     return (
-      <div>
+      <div className='page'>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -21,17 +21,21 @@ class BlogPostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginTop: rhythm(-1)
           }}
         >
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <article className='article'>
+          <section className='article__content nested-links'>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr
+              style={{
+                marginBottom: rhythm(1)
+              }}
+            />
+          </section>
+        </article>
         <Bio />
 
         <ul
@@ -40,12 +44,12 @@ class BlogPostTemplate extends React.Component {
             flexWrap: 'wrap',
             justifyContent: 'space-between',
             listStyle: 'none',
-            padding: 0,
+            padding: 0
           }}
         >
           {previous && (
             <li>
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={previous.fields.slug} rel='prev'>
                 ← {previous.frontmatter.title}
               </Link>
             </li>
@@ -53,7 +57,7 @@ class BlogPostTemplate extends React.Component {
 
           {next && (
             <li>
-              <Link to={next.fields.slug} rel="next">
+              <Link to={next.fields.slug} rel='next'>
                 {next.frontmatter.title} →
               </Link>
             </li>
