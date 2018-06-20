@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Nav from '../components/Nav'
 import '../../static/css/styles.css'
 
 class Template extends React.Component {
   render () {
     const { location, children } = this.props
+    console.log(this.props)
     let header
 
     let rootPath = `/`
@@ -59,6 +61,7 @@ class Template extends React.Component {
           marginRight: 'auto'
         }}
       >
+        <Nav />
         {header}
         {children()}
       </div>
