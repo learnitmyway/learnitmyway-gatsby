@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import '../../static/css/styles.css'
 
 class Template extends React.Component {
-  render() {
+  render () {
     const { location, children } = this.props
     let header
 
@@ -15,14 +16,14 @@ class Template extends React.Component {
       header = (
         <h1
           style={{
-            marginTop: 0,
+            marginTop: 0
           }}
         >
           <Link
             style={{
               boxShadow: 'none',
               textDecoration: 'none',
-              color: 'inherit',
+              color: 'inherit'
             }}
             to={'/'}
           >
@@ -35,14 +36,14 @@ class Template extends React.Component {
         <h3
           style={{
             fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
+            marginTop: 0
           }}
         >
           <Link
             style={{
               boxShadow: 'none',
               textDecoration: 'none',
-              color: 'inherit',
+              color: 'inherit'
             }}
             to={'/'}
           >
@@ -55,7 +56,7 @@ class Template extends React.Component {
       <div
         style={{
           marginLeft: 'auto',
-          marginRight: 'auto',
+          marginRight: 'auto'
         }}
       >
         {header}
