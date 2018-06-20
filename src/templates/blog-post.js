@@ -6,6 +6,16 @@ import get from 'lodash/get'
 import Bio from '../components/Bio'
 
 class BlogPostTemplate extends React.Component {
+  fixNavBar () {
+    const nav = document.querySelector('nav')
+    nav.classList.add('nav--fixed')
+    document.body.style.paddingTop = nav.offsetHeight + 'px'
+  }
+
+  componentDidMount () {
+    this.fixNavBar()
+  }
+
   render () {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
