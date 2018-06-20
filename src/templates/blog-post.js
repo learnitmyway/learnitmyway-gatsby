@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import '../../static/css/styles.css'
 
 import Bio from '../components/Bio'
 
@@ -17,7 +18,7 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
-            display: 'block',
+            display: 'block'
           }}
         >
           {post.frontmatter.date}
