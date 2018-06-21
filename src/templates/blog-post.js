@@ -55,7 +55,7 @@ class BlogPostTemplate extends React.Component {
               </li>
             )}
           </ul>
-          <div class='article-extra'>
+          <div className='article-extra'>
             <Subscribe />
           </div>
         </div>
