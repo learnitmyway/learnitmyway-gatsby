@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
+import Subscribe from '../components/Subscribe'
 
 class BlogPostTemplate extends React.Component {
   fixNavBar () {
@@ -61,6 +62,9 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
+        <div class='article-extra'>
+          <Subscribe />
+        </div>
       </div>
     )
   }
