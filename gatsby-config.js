@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    title: 'Learn it my way',
+    author: 'Developer Davo',
+    description: 'Developer Davo\'s website',
     siteUrl: 'https://www.learnitmyway.com/'
   },
   plugins: [
