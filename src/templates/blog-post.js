@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 
 import Nav from '../components/Nav'
 import ShareButtons from '../components/ShareButtons'
@@ -10,10 +9,11 @@ import Bio from '../components/Bio'
 
 class BlogPostTemplate extends React.Component {
   render () {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-    const pathName = this.props.location.pathname
+    const { data, location } = this.props
+    const post = data.markdownRemark
+    const siteTitle = data.site.siteMetadata.title
+    const siteUrl = data.site.siteMetadata.siteUrl
+    const pathName = location.pathname
     const { previous, next } = this.props.pathContext
 
     return (
