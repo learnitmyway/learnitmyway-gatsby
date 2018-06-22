@@ -11,22 +11,29 @@ class BlogPostTemplate extends React.Component {
   render () {
     const { data, location } = this.props
     const post = data.markdownRemark
+    const date = post.frontmatter.date
     const siteTitle = data.site.siteMetadata.title
+    const pageTitle = post.frontmatter.title
+    const siteDescription = data.site.siteMetadata.description
+    const pageDescription = post.frontmatter.excerpt
     const siteUrl = data.site.siteMetadata.siteUrl
     const pathName = location.pathname
+    const pageUrl = `${siteUrl}${pathName}`
     const { previous, next } = this.props.pathContext
 
     return (
       <div>
+        <Helmet title={`${pageTitle} | ${siteTitle}`}>
+          <meta name='description' content={pageDescription || siteDescription} />
+        </Helmet>
         <Nav fixedNav />
-        <ShareButtons pageUrl={`${siteUrl}${pathName}`} />
+        <ShareButtons pageUrl={pageUrl} />
         <div className='page'>
-          <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
           <article className='article'>
             <time className='article__date'>
-              {post.frontmatter.date}
+              {date}
             </time>
-            <h1 className='article__title--large'>{post.frontmatter.title}</h1>
+            <h1 className='article__title--large'>{pageTitle}</h1>
             <section className='article__content nested-links'>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
               <hr />
@@ -75,6 +82,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
         author
         siteUrl
       }
@@ -84,6 +92,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        excerpt
         date(formatString: "MMMM DD, YYYY")
       }
     }
