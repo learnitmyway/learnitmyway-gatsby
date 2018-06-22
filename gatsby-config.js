@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
     author: 'Developer Davo',
-    description: 'Developer Davo\'s website',
+    description: 'Developer Davo\'s learning experiences as a self-taught software developer',
     siteUrl: 'https://www.learnitmyway.com/'
   },
   plugins: [
