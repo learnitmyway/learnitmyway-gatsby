@@ -1,11 +1,10 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "learnitmyway",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
+  "main": "index.js",
+  "repository": "https://github.com/DeveloperDavo/learnitmyway.git",
+  "author": "Developer Davo <DeveloperDavo@users.noreply.github.com>",
+  "license": "MIT",
   "dependencies": {
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.39",
@@ -31,16 +30,6 @@
     "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
     "dev": "gatsby develop",
