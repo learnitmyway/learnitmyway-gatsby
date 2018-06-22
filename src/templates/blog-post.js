@@ -3,19 +3,23 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
-import Subscribe from '../components/Subscribe'
 import Nav from '../components/Nav'
+import ShareButtons from '../components/ShareButtons'
+import Subscribe from '../components/Subscribe'
+import Bio from '../components/Bio'
 
 class BlogPostTemplate extends React.Component {
   render () {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
+    const pathName = this.props.location.pathname
     const { previous, next } = this.props.pathContext
 
     return (
       <div>
         <Nav fixedNav />
+        <ShareButtons pageUrl={`${siteUrl}${pathName}`} />
         <div className='page'>
           <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
           <article className='article'>
@@ -72,6 +76,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
