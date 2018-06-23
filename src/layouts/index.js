@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import '../../static/dist/styles.css'
 
 class Template extends React.Component {
   render () {
