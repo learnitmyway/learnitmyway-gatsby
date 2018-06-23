@@ -5,6 +5,7 @@ import Link from 'gatsby-link'
 import Nav from '../components/Nav'
 import ShareButtons from '../components/ShareButtons'
 import Subscribe from '../components/Subscribe'
+import ExtraContent from '../components/ExtraContent'
 import Bio from '../components/Bio'
 
 class BlogPostTemplate extends React.Component {
@@ -20,6 +21,7 @@ class BlogPostTemplate extends React.Component {
     const pathName = location.pathname
     const pageUrl = `${siteUrl}${pathName}`
     const { previous, next } = this.props.pathContext
+    const extraContent = post.frontmatter.extraContent
 
     return (
       <div>
@@ -69,6 +71,9 @@ class BlogPostTemplate extends React.Component {
           <div className='article-extra'>
             <Subscribe />
           </div>
+          <div className='article-extra'>
+            <ExtraContent extraContent={extraContent} />
+          </div>
         </div>
       </div>
     )
@@ -94,6 +99,11 @@ export const pageQuery = graphql`
         title
         excerpt
         date(formatString: "MMMM DD, YYYY")
+        extraContent {
+          url
+          title
+          extras
+        }
       }
     }
   }
