@@ -71,9 +71,11 @@ class BlogPostTemplate extends React.Component {
           <div className='article-extra'>
             <Subscribe />
           </div>
-          <div className='article-extra'>
-            <ExtraContent extraContent={extraContent} />
-          </div>
+          {extraContent &&
+            <div className='article-extra'>
+              <ExtraContent extraContent={extraContent} />
+            </div>
+          }
         </div>
       </div>
     )
