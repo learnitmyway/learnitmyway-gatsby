@@ -10,7 +10,7 @@ const ExtraContent = ({ extraContent }) => {
       <ul className='extra-content-items'>
         {extraContent.map(item => {
           return (
-            <li>
+            <li key={item.title}>
               <a href={item.url} target='_blank' rel='noopener'>{item.title}</a>
               <span> {item.extras}</span>
             </li>
