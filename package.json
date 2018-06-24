@@ -6,7 +6,6 @@
   "author": "Developer Davo <DeveloperDavo@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^8.6.3",
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-analytics": "^1.0.29",
@@ -19,19 +18,10 @@
     "gatsby-transformer-remark": "^1.7.40",
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.5",
-    "normalize.css": "^8.0.0",
-    "parallelshell": "^3.0.2",
-    "postcss": "^6.0.23",
-    "postcss-cli": "^5.0.1",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^11.1.0"
+    "normalize.css": "^8.0.0"
   },
   "scripts": {
-    "dev": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn postcss && gatsby build",
-    "postcss": "postcss src/css/styles.css -d static/dist/ styles.css",
-    "postcss:watch": "postcss src/css/styles.css -d static/dist/ styles.css -w",
-    "start": "parallelshell 'yarn dev' 'yarn postcss:watch'"
+    "build": "gatsby build",
+    "start": "gatsby develop"
   }
 }
