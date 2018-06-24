@@ -37,35 +37,8 @@ class BlogPostTemplate extends React.Component {
             <h1 className='article__title--large'>{pageTitle}</h1>
             <section className='article__content nested-links'>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr />
             </section>
           </article>
-
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              listStyle: 'none',
-              padding: 0
-            }}
-          >
-            {previous && (
-              <li>
-                <Link to={previous.fields.slug} rel='prev'>
-                  ← {previous.frontmatter.title}
-                </Link>
-              </li>
-            )}
-
-            {next && (
-              <li>
-                <Link to={next.fields.slug} rel='next'>
-                  {next.frontmatter.title} →
-                </Link>
-              </li>
-            )}
-          </ul>
           <div className='article-extra'>
             <Subscribe />
           </div>
