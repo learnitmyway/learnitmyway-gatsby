@@ -6,7 +6,6 @@ import Nav from '../components/Nav'
 import ShareButtons from '../components/ShareButtons'
 import Subscribe from '../components/Subscribe'
 import ExtraContent from '../components/ExtraContent'
-import Bio from '../components/Bio'
 
 class BlogPostTemplate extends React.Component {
   render () {
@@ -41,7 +40,6 @@ class BlogPostTemplate extends React.Component {
               <hr />
             </section>
           </article>
-          <Bio />
 
           <ul
             style={{
