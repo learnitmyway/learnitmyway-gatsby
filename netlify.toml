@@ -1,3 +1,7 @@
 [build]
   publish = "public"
   command = "yarn build"
+  ACTIVE_ENV = "staging"
+
+[context.production.environment]
+  ACTIVE_ENV = "production"
