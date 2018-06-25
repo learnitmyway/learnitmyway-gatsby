@@ -1,7 +1,7 @@
 import React from 'react'
+import 'normalize.css'
 import '../css/styles.css'
 import '../css/syntax.css'
-import 'normalize.css'
 
 class Template extends React.Component {
   render () {
