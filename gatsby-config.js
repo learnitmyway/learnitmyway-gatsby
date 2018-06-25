@@ -1,11 +1,24 @@
+const { ACTIVE_ENV } = process.env
+const optionsRobotsTxt = ACTIVE_ENV === 'production'
+  ? { policy: [{ userAgent: '*' }] } : {
+    policy: [{ userAgent: '*', disallow: ['/'] }],
+    sitemap: null,
+    host: null
+  }
+
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
     author: 'Developer Davo',
-    description: 'Developer Davo\'s learning experiences as a self-taught software developer',
+    description:
+      "Developer Davo's learning experiences as a self-taught software developer",
     siteUrl: 'https://www.learnitmyway.com/'
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: optionsRobotsTxt
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
