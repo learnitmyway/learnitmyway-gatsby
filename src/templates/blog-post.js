@@ -8,6 +8,7 @@ import Subscribe from '../components/Subscribe'
 import ExtraContent from '../components/ExtraContent'
 import Bio from '../components/Bio'
 import LinkToRepo from '../components/LinkToRepo'
+import License from '../components/License'
 
 class BlogPostTemplate extends React.Component {
   render () {
@@ -80,6 +81,7 @@ class BlogPostTemplate extends React.Component {
         </div>
         <footer>
           <LinkToRepo />
+          <License />
         </footer>
       </div>
     )
