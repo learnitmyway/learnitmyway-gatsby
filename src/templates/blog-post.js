@@ -7,6 +7,7 @@ import ShareButtons from '../components/ShareButtons'
 import Subscribe from '../components/Subscribe'
 import ExtraContent from '../components/ExtraContent'
 import Bio from '../components/Bio'
+import LinkToRepo from '../components/LinkToRepo'
 
 class BlogPostTemplate extends React.Component {
   render () {
@@ -77,6 +78,9 @@ class BlogPostTemplate extends React.Component {
             </div>
           }
         </div>
+        <footer>
+          <LinkToRepo />
+        </footer>
       </div>
     )
   }
