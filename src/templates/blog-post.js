@@ -22,7 +22,6 @@ class BlogPostTemplate extends React.Component {
     const siteUrl = data.site.siteMetadata.siteUrl
     const pathName = location.pathname
     const pageUrl = `${siteUrl}${pathName}`
-    const { previous, next } = this.props.pathContext
     const extraContent = post.frontmatter.extraContent
 
     return (
@@ -43,31 +42,6 @@ class BlogPostTemplate extends React.Component {
               <hr />
             </section>
           </article>
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              listStyle: 'none',
-              padding: 0
-            }}
-          >
-            {previous && (
-              <li>
-                <Link to={previous.fields.slug} rel='prev'>
-                  ← {previous.frontmatter.title}
-                </Link>
-              </li>
-            )}
-
-            {next && (
-              <li>
-                <Link to={next.fields.slug} rel='next'>
-                  {next.frontmatter.title} →
-                </Link>
-              </li>
-            )}
-          </ul>
           <div className='article-extra'>
             <Subscribe />
           </div>
