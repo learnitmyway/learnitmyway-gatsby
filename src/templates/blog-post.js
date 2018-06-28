@@ -6,9 +6,28 @@ import Nav from '../components/Nav'
 import ShareButtonsVertical from '../components/ShareButtonsVertical'
 import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
 import Subscribe from '../components/Subscribe'
-import ExtraContent from '../components/ExtraContent'
 import LinkToRepo from '../components/LinkToRepo'
 import License from '../components/License'
+
+const ExtraContent = ({ extraContent }) => {
+  return (
+    <div className='blog-extras-container nested-links'>
+      <div className='blog-extras-container__title'>
+        You might also like:
+      </div>
+      <ul className='extra-content-items'>
+        {extraContent.map(item => {
+          return (
+            <li key={item.title}>
+              <a href={item.url} target='_blank' rel='noopener'>{item.title}</a>
+              <span> {item.extras}</span>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+  )
+}
 
 class BlogPostTemplate extends React.Component {
   render () {
