@@ -1,8 +1,8 @@
 import React from 'react'
 
+import 'prismjs/themes/prism-solarizedlight.css'
 import 'normalize.css'
 import '../css/styles.css'
-import '../css/syntax.css'
 
 class Template extends React.Component {
   render () {
