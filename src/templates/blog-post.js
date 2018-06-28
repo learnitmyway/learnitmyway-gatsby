@@ -7,7 +7,6 @@ import ShareButtonsVertical from '../components/ShareButtonsVertical'
 import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
 import Subscribe from '../components/Subscribe'
 import ExtraContent from '../components/ExtraContent'
-import Bio from '../components/Bio'
 import LinkToRepo from '../components/LinkToRepo'
 import License from '../components/License'
 
@@ -44,8 +43,6 @@ class BlogPostTemplate extends React.Component {
               <hr />
             </section>
           </article>
-          <Bio />
-
           <ul
             style={{
               display: 'flex',
