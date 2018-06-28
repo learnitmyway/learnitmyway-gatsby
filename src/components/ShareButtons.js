@@ -17,13 +17,18 @@ const ShareButton = ({ href, src }) => {
   )
 }
 
-const ShareButtons = ({ pageUrl }) => {
+const ShareButtons = ({ pageUrl, pageTitle }) => {
+  const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`
+  const fB = <ShareButton href={fbHref} src={'/img/facebook.svg'} />
+  const twitterHref = `https://twitter.com/intent/tweet?text=${pageTitle}&via=DeveloperDavo%20${pageUrl}`
+  const twitter = <ShareButton href={twitterHref} src={'/img/twitter.svg'} />
   return (
     <div className='share-buttons-vertical nested-links'>
       <div className='share-buttons-vertical__text'>
         SHARE
       </div>
-      <ShareButton href={`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`} src={'/img/facebook.svg'} />
+      {fB}
+      {twitter}
     </div>
   )
 }

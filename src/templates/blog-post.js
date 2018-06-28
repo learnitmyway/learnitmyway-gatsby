@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
           <meta name='description' content={pageDescription || siteDescription} />
         </Helmet>
         <Nav fixedNav />
-        <ShareButtons pageUrl={pageUrl} />
+        <ShareButtons pageUrl={pageUrl} pageTitle={pageTitle} />
         <div className='page'>
           <article className='article'>
             <time className='article__date'>
