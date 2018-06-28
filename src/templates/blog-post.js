@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
 import Nav from '../components/Nav'
-import ShareButtons from '../components/ShareButtons'
+import ShareButtons from '../components/ShareButtonsVertical'
 import Subscribe from '../components/Subscribe'
 import ExtraContent from '../components/ExtraContent'
 import Bio from '../components/Bio'
