@@ -27,6 +27,9 @@ const ShareButtons = ({ pageUrl, pageTitle, pageDescription }) => {
   const linkedInHref = `http://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}&summary=${pageDescription}`
   const linkedIn = <ShareButton href={linkedInHref} src={'/img/linkedin.svg'} />
 
+  const emailHref = `mailto:?subject=${pageTitle}&body=${pageDescription}%0A${pageUrl}`
+  const email = <ShareButton href={emailHref} src={'/img/email.svg'} />
+
   return (
     <div className='share-buttons-vertical nested-links'>
       <div className='share-buttons-vertical__text'>
@@ -35,6 +38,7 @@ const ShareButtons = ({ pageUrl, pageTitle, pageDescription }) => {
       {fB}
       {twitter}
       {linkedIn}
+      {email}
     </div>
   )
 }
