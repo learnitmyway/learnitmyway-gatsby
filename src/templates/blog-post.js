@@ -47,6 +47,14 @@ class BlogPostTemplate extends React.Component {
       <div>
         <Helmet title={`${pageTitle} | ${siteTitle}`}>
           <meta name='description' content={pageDescription || siteDescription} />
+
+          <meta property='fb:app_id' content='366384430479764' />
+          <meta property='og:image' content='/img/logo-200w.png' />
+          <meta property='og:image:width' content='200' />
+          <meta property='og:image:height' content='200' />
+          <meta property='og:title' content={`${pageTitle || siteTitle}`} />
+
+          <meta name='twitter:card' content='summary' />
         </Helmet>
         <Nav fixedNav />
         <ShareButtonsVertical pageUrl={pageUrl} pageTitle={pageTitle} pageDescription={pageDescription} />
