@@ -48,6 +48,16 @@ class BlogPostTemplate extends React.Component {
         <Helmet title={`${pageTitle} | ${siteTitle}`}>
           <meta name='description' content={pageDescription || siteDescription} />
 
+          <link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
+          <link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
+          <link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
+          <link rel='manifest' href='/favicon/site.webmanifest' />
+          <link rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color='#004ba0' />
+          <link rel='shortcut icon' href='/favicon/favicon.ico' />
+          <meta name='msapplication-TileColor' content='#004ba0' />
+          <meta name='msapplication-config' content='/favicon/browserconfig.xml' />
+          <meta name='theme-color' content='#ffffff' />
+
           <meta property='fb:app_id' content='366384430479764' />
           <meta property='og:image' content='/img/logo-200w.png' />
           <meta property='og:image:width' content='200' />
