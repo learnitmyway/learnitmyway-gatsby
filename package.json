@@ -11,6 +11,7 @@
     "gatsby-plugin-google-analytics": "^1.0.29",
     "gatsby-plugin-offline": "^1.0.18",
     "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-sitemap": "^1.2.25",
     "gatsby-remark-copy-linked-files": "^1.5.31",
     "gatsby-remark-images": "^1.5.61",
     "gatsby-remark-prismjs": "^1.2.24",
