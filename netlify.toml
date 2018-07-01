@@ -1,7 +1,7 @@
 [build]
   publish = "public"
   command = "yarn build"
-  ACTIVE_ENV = "staging"
+  GATSBY_BASEURL = "https://www.learnitmyway-gatsby.com/"
 
 [context.production.environment]
-  ACTIVE_ENV = "production"
+  GATSBY_BASEURL = "https://staging--learnitmyway-gatsby.netlify.com/"
