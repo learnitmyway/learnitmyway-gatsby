@@ -1,6 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 
 import Nav from '../components/Nav'
 import ShareButtonsVertical from '../components/ShareButtonsVertical'
@@ -8,6 +6,7 @@ import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
 import Subscribe from '../components/Subscribe'
 import LinkToRepo from '../components/LinkToRepo'
 import License from '../components/License'
+import Head from '../components/Head'
 
 const ExtraContent = ({ extraContent }) => {
   return (
@@ -36,8 +35,10 @@ class BlogPostTemplate extends React.Component {
     const date = post.frontmatter.date
     const siteTitle = data.site.siteMetadata.title
     const pageTitle = post.frontmatter.title
+    const title = `${pageTitle} | ${siteTitle}`
     const siteDescription = data.site.siteMetadata.description
     const pageDescription = post.frontmatter.excerpt
+    const description = pageDescription || siteDescription
     const siteUrl = data.site.siteMetadata.siteUrl
     const pathName = location.pathname
     const pageUrl = `${siteUrl}${pathName}`
@@ -45,27 +46,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet title={`${pageTitle} | ${siteTitle}`}>
-          <meta name='description' content={pageDescription || siteDescription} />
-
-          <link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
-          <link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
-          <link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
-          <link rel='manifest' href='/favicon/site.webmanifest' />
-          <link rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color='#004ba0' />
-          <link rel='shortcut icon' href='/favicon/favicon.ico' />
-          <meta name='msapplication-TileColor' content='#004ba0' />
-          <meta name='msapplication-config' content='/favicon/browserconfig.xml' />
-          <meta name='theme-color' content='#ffffff' />
-
-          <meta property='fb:app_id' content='366384430479764' />
-          <meta property='og:image' content='/img/logo-200w.png' />
-          <meta property='og:image:width' content='200' />
-          <meta property='og:image:height' content='200' />
-          <meta property='og:title' content={`${pageTitle || siteTitle}`} />
-
-          <meta name='twitter:card' content='summary' />
-        </Helmet>
+        <Head title={title} description={description} />
         <Nav fixedNav />
         <ShareButtonsVertical pageUrl={pageUrl} pageTitle={pageTitle} pageDescription={pageDescription} />
         <div className='page'>
