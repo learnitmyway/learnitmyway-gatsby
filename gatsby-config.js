@@ -1,3 +1,5 @@
+console.log(process.env.CONTEXT)
+console.log(process.env.BRANCH)
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
