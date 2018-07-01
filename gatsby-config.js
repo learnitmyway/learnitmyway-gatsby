@@ -3,7 +3,7 @@ module.exports = {
     title: 'Learn it my way',
     author: 'Developer Davo',
     description: 'Developer Davo\'s learning experiences as a self-taught software developer',
-    siteUrl: 'https://www.learnitmyway.com/'
+    siteUrl: `${process.env.DEPLOY_PRIME_URL || '/'}`
   },
   plugins: [
     {
