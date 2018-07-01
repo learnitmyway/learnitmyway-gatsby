@@ -1,8 +1,3 @@
-GATSBY_BASEURL = "fox"
 [build]
   publish = "public"
   command = "yarn build"
-  GATSBY_BASEURL = "https://www.learnitmyway-gatsby.com/"
-
-[context.production.environment]
-  GATSBY_BASEURL = "https://staging--learnitmyway-gatsby.netlify.com/"

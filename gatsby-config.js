@@ -1,4 +1,7 @@
 console.log(process.env.GATSBY_BASEURL)
+console.log(process.env.URL)
+console.log(process.env.DEPLOY_URL)
+console.log(process.env.DEPLOY_PRIME_URL)
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
