@@ -9,7 +9,9 @@ class Nav extends React.Component {
   }
 
   componentDidMount () {
-    this.fixNavBar()
+    if (this.props.fixedNav) {
+      this.fixNavBar()
+    }
   }
 
   render () {
