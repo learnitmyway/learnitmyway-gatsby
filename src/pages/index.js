@@ -1,19 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
+
 import Nav from '../components/Nav'
 
 class BlogIndex extends React.Component {
   render () {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <div>
         <Nav />
         <div>
-          <Helmet title={siteTitle} />
           {posts.map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug
             return (
