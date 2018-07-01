@@ -47,7 +47,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <Head title={title} description={description} />
-        <Nav fixedNav />
+        <Nav fixedNav siteUrl={siteUrl} />
         <ShareButtonsVertical pageUrl={pageUrl} pageTitle={pageTitle} pageDescription={pageDescription} />
         <div className='page'>
           <article className='article'>

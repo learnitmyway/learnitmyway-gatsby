@@ -15,7 +15,7 @@ class Nav extends React.Component {
   render () {
     return (
       <nav className='nav'>
-        <Link to='/' className='nav__title'>
+        <Link to={this.props.siteUrl} className='nav__title'>
           {'Learn it my way'}
         </Link>
         <div>
