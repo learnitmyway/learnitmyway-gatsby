@@ -1,13 +1,9 @@
-console.log(process.env.GATSBY_BASEURL)
-console.log(process.env.URL)
-console.log(process.env.DEPLOY_URL)
-console.log(process.env.DEPLOY_PRIME_URL)
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
     author: 'Developer Davo',
     description: 'Developer Davo\'s learning experiences as a self-taught software developer',
-    siteUrl: `${process.env.GATSBY_BASEURL}`
+    siteUrl: `${process.env.DEPLOY_PRIME_URL}`
   },
   plugins: [
     {
