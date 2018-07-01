@@ -1,9 +1,10 @@
+const siteUrl = (process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || '/'
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
     author: 'Developer Davo',
     description: 'Developer Davo\'s learning experiences as a self-taught software developer',
-    siteUrl: 'https://www.learnitmyway.com/'
+    siteUrl
   },
   plugins: [
     {
