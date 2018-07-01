@@ -1,3 +1,4 @@
+GATSBY_BASEURL = "fox"
 [build]
   publish = "public"
   command = "yarn build"
