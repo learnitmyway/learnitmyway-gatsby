@@ -1,9 +1,14 @@
+const ACTIVE_ENV = process.env.ACTIVE_ENV
+console.log(ACTIVE_ENV)
+const siteUrl = ACTIVE_ENV === 'staging' ? 'https://staging--www.learnitmyway-gatbsy.com/' : 'https://learnitmyway.netlify.com/'
+console.log(siteUrl)
+
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
     author: 'Developer Davo',
     description: 'Developer Davo\'s learning experiences as a self-taught software developer',
-    siteUrl: 'https://www.learnitmyway.com/'
+    siteUrl
   },
   plugins: [
     {
