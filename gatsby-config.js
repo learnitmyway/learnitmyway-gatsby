@@ -1,4 +1,7 @@
-const siteUrl = (process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || '/'
+const siteUrl =
+  (process.env.CONTEXT === 'production'
+    ? process.env.URL
+    : process.env.DEPLOY_PRIME_URL) || 'https://www.learnitmyway.com/'
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
