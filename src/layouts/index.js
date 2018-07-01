@@ -1,15 +1,20 @@
 import React from 'react'
 
+import Head from '../components/Head'
+
 import 'prismjs/themes/prism-solarizedlight.css'
 import 'normalize.css'
 import '../css/styles.css'
 
 class Template extends React.Component {
   render () {
-    const { children } = this.props
+    const { children, data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const siteDescription = data.site.siteMetadata.description
 
     return (
       <div>
+        <Head title={siteTitle} description={siteDescription} />
         {children()}
       </div>
     )
@@ -17,3 +22,14 @@ class Template extends React.Component {
 }
 
 export default Template
+
+export const pageQuery = graphql`
+  query TemplateQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
