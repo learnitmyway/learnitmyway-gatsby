@@ -7,6 +7,7 @@ module.exports = {
     title: 'Learn it my way',
     author: 'Developer Davo',
     description: 'Developer Davo\'s learning experiences as a self-taught software developer',
+    quote: '"The more that you read, the more things you will know. \nThe more that you learn, the more places you\'ll go." - Dr. Seuss',
     siteUrl
   },
   plugins: [
