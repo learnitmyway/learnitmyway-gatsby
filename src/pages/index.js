@@ -6,6 +6,9 @@ import SocialFollow from '../components/SocialFollow'
 import ShareButtonsVertical from '../components/ShareButtonsVertical'
 import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
 import Subscribe from '../components/Subscribe'
+import LinkToRepo from '../components/LinkToRepo'
+import License from '../components/License'
+import Nav from '../components/Nav'
 
 const Header = ({ title, quote }) => (
   <header className='site-header'>
@@ -77,6 +80,11 @@ class BlogIndex extends React.Component {
           </div>
           {excerpts}
         </div>
+        <footer>
+          <LinkToRepo />
+          <License />
+          <Nav />
+        </footer>
       </div>
     )
   }
