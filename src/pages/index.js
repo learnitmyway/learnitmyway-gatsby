@@ -41,6 +41,10 @@ const Excerpt = ({date, title, excerpt}) => (
 )
 
 class BlogIndex extends React.Component {
+  componentDidMount () {
+    document.body.style.paddingTop = '0'
+  }
+
   render () {
     const { data } = this.props
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
