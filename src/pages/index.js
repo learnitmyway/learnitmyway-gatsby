@@ -20,6 +20,20 @@ const Header = ({ title, quote }) => (
   </header>
 )
 
+const Excerpt = ({date, title, excerpt}) => (
+  <div className='summary'>
+    <div className='article__date'>
+      {date}
+    </div>
+    <h1 className='article__title'>
+      {title}
+    </h1>
+    <div className='summary__excerpt'>
+      {excerpt}
+    </div>
+  </div>
+)
+
 class BlogIndex extends React.Component {
   render () {
     const { data } = this.props
@@ -27,25 +41,23 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const quote = data.site.siteMetadata.quote
 
+    const excerpts = posts.map(({ node }) => {
+      const date = node.frontmatter.date
+      const title = node.frontmatter.title
+      const excerpt = node.frontmatter.excerpt
+      const slug = node.fields.slug
+
+      return (
+        <Link key={slug} className='index-anchor' to={slug}>
+          <Excerpt date={date} title={title} excerpt={excerpt} />
+        </Link>
+      )
+    })
+
     return (
       <div>
         <Header title={siteTitle} quote={quote} />
-        <div>
-          {posts.map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h3>
-                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </div>
-            )
-          })}
-        </div>
+        {excerpts}
       </div>
     )
   }
@@ -71,6 +83,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            excerpt
           }
         }
       }
