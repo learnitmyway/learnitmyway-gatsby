@@ -62,13 +62,21 @@ class BlogIndex extends React.Component {
       <div>
         <Header title={siteTitle} quote={quote} />
         <ShareButtonsVertical pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
-        <div className='article-extra'>
-          <Subscribe />
+        <div className='page'>
+          <div className='about'>
+            <p>
+              Hello, I am Developer Davo and I am a self-taught software developer.
+              I created this blog so I could consolidate and share my learning experiences.
+            </p>
+          </div>
+          <div className='article-extra'>
+            <Subscribe />
+          </div>
+          <div className='share-horizontal article-extra'>
+            <ShareButtonsHorizontal pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
+          </div>
+          {excerpts}
         </div>
-        <div className='share-horizontal article-extra'>
-          <ShareButtonsHorizontal pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
-        </div>
-        {excerpts}
       </div>
     )
   }
