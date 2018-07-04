@@ -3,6 +3,9 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import SocialFollow from '../components/SocialFollow'
+import ShareButtonsVertical from '../components/ShareButtonsVertical'
+import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
+import Subscribe from '../components/Subscribe'
 
 const Header = ({ title, quote }) => (
   <header className='site-header'>
@@ -39,6 +42,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteTitle = data.site.siteMetadata.title
+    const siteUrl = data.site.siteMetadata.siteUrl
     const quote = data.site.siteMetadata.quote
 
     const excerpts = posts.map(({ node }) => {
@@ -57,6 +61,13 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Header title={siteTitle} quote={quote} />
+        <ShareButtonsVertical pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
+        <div className='article-extra'>
+          <Subscribe />
+        </div>
+        <div className='share-horizontal article-extra'>
+          <ShareButtonsHorizontal pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
+        </div>
         {excerpts}
       </div>
     )
@@ -71,6 +82,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         quote
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
