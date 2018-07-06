@@ -49,6 +49,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteTitle = data.site.siteMetadata.title
     const siteUrl = data.site.siteMetadata.siteUrl
+    const siteDescription = data.site.siteMetadata.description
     const quote = data.site.siteMetadata.quote
 
     const excerpts = posts.map(({ node }) => {
@@ -67,7 +68,7 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Header title={siteTitle} quote={quote} />
-        <ShareButtons url={siteUrl} title={siteTitle} description={quote} vertical />
+        <ShareButtons url={siteUrl} title={siteTitle} description={siteDescription} vertical />
         <div className='page'>
           <div className='about'>
             <p>
@@ -79,7 +80,7 @@ class BlogIndex extends React.Component {
             <Subscribe />
           </div>
           <div className='share-horizontal article-extra'>
-            <ShareButtons url={siteUrl} title={siteTitle} description={quote} />
+            <ShareButtons url={siteUrl} title={siteTitle} description={siteDescription} />
           </div>
           {excerpts}
         </div>
@@ -102,6 +103,7 @@ export const pageQuery = graphql`
         title
         quote
         siteUrl
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
