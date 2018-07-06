@@ -58,7 +58,6 @@ class BlogPostTemplate extends React.Component {
             <h1 className='article__title--large'>{pageTitle}</h1>
             <section className='article__content nested-links'>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr />
             </section>
           </article>
           <div className='article-extra'>
