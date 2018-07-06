@@ -3,8 +3,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import SocialFollow from '../components/SocialFollow'
-import ShareButtonsVertical from '../components/ShareButtonsVertical'
-import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
+import ShareButtons from '../components/ShareButtons'
 import Subscribe from '../components/Subscribe'
 import LinkToRepo from '../components/LinkToRepo'
 import License from '../components/License'
@@ -68,7 +67,7 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Header title={siteTitle} quote={quote} />
-        <ShareButtonsVertical pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
+        <ShareButtons url={siteUrl} title={siteTitle} description={quote} vertical />
         <div className='page'>
           <div className='about'>
             <p>
@@ -80,7 +79,7 @@ class BlogIndex extends React.Component {
             <Subscribe />
           </div>
           <div className='share-horizontal article-extra'>
-            <ShareButtonsHorizontal pageUrl={siteUrl} pageTitle={siteTitle} pageDescription={quote} />
+            <ShareButtons url={siteUrl} title={siteTitle} description={quote} />
           </div>
           {excerpts}
         </div>

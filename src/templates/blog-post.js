@@ -2,8 +2,7 @@ import React from 'react'
 
 import Head from '../components/Head'
 import Nav from '../components/Nav'
-import ShareButtonsVertical from '../components/ShareButtonsVertical'
-import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
+import ShareButtons from '../components/ShareButtons'
 import Subscribe from '../components/Subscribe'
 import Comments from '../components/Comments'
 import LinkToRepo from '../components/LinkToRepo'
@@ -49,7 +48,7 @@ class BlogPostTemplate extends React.Component {
       <div>
         <Head title={title} description={description} />
         <Nav fixedNav />
-        <ShareButtonsVertical pageUrl={pageUrl} pageTitle={pageTitle} pageDescription={pageDescription} />
+        <ShareButtons url={pageUrl} title={pageTitle} description={pageDescription} vertical />
         <div className='page'>
           <article className='article'>
             <time className='article__date'>
@@ -64,7 +63,7 @@ class BlogPostTemplate extends React.Component {
             <Subscribe />
           </div>
           <div className='share-horizontal article-extra'>
-            <ShareButtonsHorizontal pageUrl={pageUrl} pageTitle={pageTitle} pageDescription={pageDescription} />
+            <ShareButtons url={pageUrl} title={pageTitle} description={pageDescription} />
           </div>
           {extraContent &&
             <div className='article-extra'>
