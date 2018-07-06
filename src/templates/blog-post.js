@@ -1,12 +1,13 @@
 import React from 'react'
 
+import Head from '../components/Head'
 import Nav from '../components/Nav'
 import ShareButtonsVertical from '../components/ShareButtonsVertical'
 import ShareButtonsHorizontal from '../components/ShareButtonsHorizontal'
 import Subscribe from '../components/Subscribe'
+import Comments from '../components/Comments'
 import LinkToRepo from '../components/LinkToRepo'
 import License from '../components/License'
-import Head from '../components/Head'
 
 const ExtraContent = ({ extraContent }) => {
   return (
@@ -71,6 +72,9 @@ class BlogPostTemplate extends React.Component {
               <ExtraContent extraContent={extraContent} />
             </div>
           }
+          <div class='blog-extras-container blog-extras-container--center nested-links'>
+            <Comments />
+          </div>
         </div>
         <footer>
           <LinkToRepo />
