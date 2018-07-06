@@ -72,7 +72,7 @@ class BlogPostTemplate extends React.Component {
               <ExtraContent extraContent={extraContent} />
             </div>
           }
-          <div class='blog-extras-container blog-extras-container--center nested-links'>
+          <div className='article-extra'>
             <Comments />
           </div>
         </div>
