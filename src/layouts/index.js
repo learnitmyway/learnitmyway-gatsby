@@ -11,10 +11,11 @@ class Template extends React.Component {
     const { children, data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const siteDescription = data.site.siteMetadata.description
+    const siteUrl = data.site.siteMetadata.siteUrl
 
     return (
       <div>
-        <Head title={siteTitle} description={siteDescription} />
+        <Head title={siteTitle} description={siteDescription} url={siteUrl} />
         {children()}
       </div>
     )
@@ -29,6 +30,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
       }
     }
   }

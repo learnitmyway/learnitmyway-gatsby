@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const Head = ({title, description}) => (
+const Head = ({title, description, url}) => (
   <Helmet title={title}>
     <meta name='description' content={description} />
 
@@ -16,10 +16,13 @@ const Head = ({title, description}) => (
     <meta name='theme-color' content='#ffffff' />
 
     <meta property='fb:app_id' content='366384430479764' />
+    <meta property='og:title' content={title} />
+    <meta property='og:url' content={url} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='website' />
     <meta property='og:image' content='/img/logo-200w.png' />
     <meta property='og:image:width' content='200' />
     <meta property='og:image:height' content='200' />
-    <meta property='og:title' content={title} />
 
     <meta name='twitter:card' content='summary' />
   </Helmet>
