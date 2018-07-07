@@ -2,6 +2,16 @@ const siteUrl =
   (process.env.CONTEXT === 'production'
     ? process.env.URL
     : process.env.DEPLOY_PRIME_URL) || 'https://www.learnitmyway.com/'
+
+const optionsRobotsTxt =
+  process.env.ACTIVE_ENV === 'production'
+    ? { policy: [{ userAgent: '*' }] }
+    : {
+      policy: [{ userAgent: '*', disallow: ['/'] }],
+      sitemap: null,
+      host: null
+    }
+
 module.exports = {
   siteMetadata: {
     title: 'Learn it my way',
@@ -13,6 +23,10 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-sitemap`
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: optionsRobotsTxt
     },
     {
       resolve: `gatsby-source-filesystem`,
