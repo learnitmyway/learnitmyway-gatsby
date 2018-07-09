@@ -59,9 +59,9 @@ class BlogIndex extends React.Component {
       const slug = node.fields.slug
 
       return (
-        <Link key={slug} className='index-anchor' to={slug}>
+        <a className='index-anchor' href={slug}>
           <Excerpt date={date} title={title} excerpt={excerpt} />
-        </Link>
+        </a>
       )
     })
 
