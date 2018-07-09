@@ -65,9 +65,6 @@ class BlogIndex extends React.Component {
       )
     })
 
-    console.log('****************siteUrl**********')
-    console.log(siteUrl)
-
     return (
       <div>
         <Header title={siteTitle} quote={quote} />

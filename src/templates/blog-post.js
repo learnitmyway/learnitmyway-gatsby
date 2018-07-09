@@ -44,9 +44,6 @@ class BlogPostTemplate extends React.Component {
     const pageUrl = `${siteUrl}${pathName}`
     const extraContent = post.frontmatter.extraContent
 
-    console.log('****************pageUrl***********')
-    console.log(pageUrl)
-
     return (
       <div>
         <Head title={title} description={description} url={pageUrl} />
