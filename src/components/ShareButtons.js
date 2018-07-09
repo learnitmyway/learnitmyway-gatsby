@@ -57,6 +57,7 @@ const ShareButtons = ({url, title, description, vertical}) => {
       <div className='share-buttons-vertical__text'>
       SHARE
       </div>
+      <img src='/img/Portugal.jpg' />
       <FbShareButton url={url} />
       <TwitterShareButton url={url} title={title} />
       <LinkedInShareButton url={url} title={title} description={description} />
