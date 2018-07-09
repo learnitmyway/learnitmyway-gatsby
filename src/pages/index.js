@@ -25,7 +25,7 @@ const Header = ({ title, quote }) => (
   </header>
 )
 
-const Excerpt = ({date, title, excerpt}) => (
+const Excerpt = ({date, title, excerpt, publisherInfo}) => (
   <div className='summary'>
     <div className='article__date'>
       {date}
@@ -36,6 +36,11 @@ const Excerpt = ({date, title, excerpt}) => (
     <div className='summary__excerpt'>
       {excerpt}
     </div>
+    {publisherInfo &&
+      <div className='article__publisher-info'>
+        {publisherInfo}
+      </div>
+    }
   </div>
 )
 
@@ -58,8 +63,10 @@ class BlogIndex extends React.Component {
       const excerpt = node.frontmatter.excerpt
       const slug = node.fields.slug
       const existingUrl = node.frontmatter.existingUrl
+      const publisherInfo = node.frontmatter.publisherInfo
 
-      const excerptComp = <Excerpt date={date} title={title} excerpt={excerpt} />
+      const excerptComp =
+        <Excerpt date={date} title={title} excerpt={excerpt} publisherInfo={publisherInfo} />
 
       if (existingUrl) {
         return (
@@ -129,6 +136,7 @@ export const pageQuery = graphql`
             title
             excerpt
             existingUrl
+            publisherInfo
           }
         }
       }
