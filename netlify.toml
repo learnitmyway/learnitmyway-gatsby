@@ -5,3 +5,10 @@
 
 [context.production.environment]
   ACTIVE_ENV = "production"
+
+ 
+[[redirects]]
+  from = "/2017/01/31/how-to-network-as-a-software-developer/"
+  to = "https://medium.com/@developerdavo/how-to-network-as-a-software-developer-2bab6cba09fc"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
