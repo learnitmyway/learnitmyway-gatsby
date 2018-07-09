@@ -86,7 +86,6 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Header title={siteTitle} quote={quote} />
-        <ShareButtons url={siteUrl} title={siteTitle} description={siteDescription} vertical />
         <div className='page'>
           <div className='about'>
             <p>
