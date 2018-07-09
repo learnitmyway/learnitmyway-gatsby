@@ -65,7 +65,7 @@ class BlogIndex extends React.Component {
       )
     })
 
-    console.log('****************siteUrl***********')
+    console.log('****************siteUrl**********')
     console.log(siteUrl)
 
     return (
