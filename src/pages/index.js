@@ -57,12 +57,23 @@ class BlogIndex extends React.Component {
       const title = node.frontmatter.title
       const excerpt = node.frontmatter.excerpt
       const slug = node.fields.slug
+      const existingUrl = node.frontmatter.existingUrl
 
-      return (
-        <Link key={slug} className='index-anchor' to={slug}>
-          <Excerpt date={date} title={title} excerpt={excerpt} />
-        </Link>
-      )
+      const excerptComp = <Excerpt date={date} title={title} excerpt={excerpt} />
+
+      if (existingUrl) {
+        return (
+          <a key={slug} className='index-anchor' href={existingUrl}>
+            {excerptComp}
+          </a>
+        )
+      } else {
+        return (
+          <Link key={slug} className='index-anchor' to={slug}>
+            {excerptComp}
+          </Link>
+        )
+      }
     })
 
     return (
@@ -117,6 +128,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             excerpt
+            existingUrl
           }
         }
       }
