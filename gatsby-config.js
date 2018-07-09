@@ -1,7 +1,7 @@
 const siteUrl =
   (process.env.CONTEXT === 'production'
     ? process.env.URL
-    : process.env.DEPLOY_PRIME_URL) || 'https://www.learnitmyway.com/'
+    : process.env.DEPLOY_PRIME_URL) || 'https://www.learnitmyway.com'
 
 const optionsRobotsTxt =
   process.env.ACTIVE_ENV === 'production'
