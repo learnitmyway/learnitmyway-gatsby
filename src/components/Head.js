@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import logo from '../img/logo-200w.png'
 
 const Head = ({title, description, url}) => (
   <Helmet title={title}>
@@ -20,7 +21,7 @@ const Head = ({title, description, url}) => (
     <meta property='og:url' content={url} />
     <meta property='og:description' content={description} />
     <meta property='og:type' content='website' />
-    <meta property='og:image' content='/img/logo-200w.png' />
+    <meta property='og:image' content={logo} />
     <meta property='og:image:width' content='200' />
     <meta property='og:image:height' content='200' />
 

@@ -1,32 +1,36 @@
 import React from 'react'
 
 import ShareButton from './ShareButton'
+import fbLogo from '../img/facebook.svg'
+import twitterLogo from '../img/twitter.svg'
+import linkedInLogo from '../img/linkedin.svg'
+import emailLogo from '../img/email.svg'
 
 const FbShareButton = ({url}) => {
   const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${url}`
   return (
-    <ShareButton href={fbHref} src={'/img/facebook.svg'} />
+    <ShareButton href={fbHref} src={fbLogo} />
   )
 }
 
 const TwitterShareButton = ({title, url}) => {
   const twitterHref = `https://twitter.com/intent/tweet?text=${title}&via=DeveloperDavo%20${url}`
   return (
-    <ShareButton href={twitterHref} src={'/img/twitter.svg'} />
+    <ShareButton href={twitterHref} src={twitterLogo} />
   )
 }
 
 const LinkedInShareButton = ({title, description, url}) => {
   const linkedInHref = `http://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${description}`
   return (
-    <ShareButton href={linkedInHref} src={'/img/linkedin.svg'} />
+    <ShareButton href={linkedInHref} src={linkedInLogo} />
   )
 }
 
 const EmailShareButton = ({title, description, url}) => {
   const emailHref = `mailto:?subject=${title}&body=${description}%0A${url}`
   return (
-    <ShareButton href={emailHref} src={'/img/email.svg'} />
+    <ShareButton href={emailHref} src={emailLogo} />
   )
 }
 
