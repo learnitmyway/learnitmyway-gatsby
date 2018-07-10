@@ -5,6 +5,7 @@ import fbLogo from '../img/facebook.svg'
 import twitterLogo from '../img/twitter.svg'
 import linkedInLogo from '../img/linkedin.svg'
 import emailLogo from '../img/email.svg'
+import portugal from '../img/Portugal.jpg'
 
 const FbShareButton = ({url}) => {
   const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${url}`
@@ -61,7 +62,7 @@ const ShareButtons = ({url, title, description, vertical}) => {
       <div className='share-buttons-vertical__text'>
       SHARE
       </div>
-      <img src='/img/Portugal.jpg' />
+      <img src={portugal} />
       <FbShareButton url={url} />
       <TwitterShareButton url={url} title={title} />
       <LinkedInShareButton url={url} title={title} description={description} />
